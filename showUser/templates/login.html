@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3"></div>
+            <div class="col-sm-6 jumbotron">
+                <h3 class="text-center">Login</h3>
+<form action="/postsignIn/" method="post">
+    {% csrf_token %}
+    <br/>
+   <!-- Enter Your Email: -->
+    <label for="Email">Email</label>
+    <input type="email"id="Email" name="email" class="form-control"><br><br>
+   <!-- Enter Your Password: -->
+    <label for="Password">Password</label>
+    <input type="password" id="Password" name="pass" class="form-control"><br><br>
+    <input type="submit" value="SignIn" class="btn-primary"><br><br>
+    <div class="text-center text-primary fw-bold mt-2"><small>Didn't have an account ?
+        <a href="{% url 'signup' %}" class="text-danger ml-1">Create an
+            account</a></small> 
+    </div>
+</form>
+</div>
+</div>
+</div>
+
+{% endblock %}
